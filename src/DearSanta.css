@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Paytone+One");
+
+.App {
+	font-family: sans-serif;
+	text-align: center;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	columns: 2;
+	min-height: 100vh;
+}
+.left {
+	background: green;
+	display: inline-flex;
+	width: 90%;
+	position: relative;
+}
+.right {
+	background: grey;
+	display: inline-flex;
+	width: 10%;
+}
+
+.background-map {
+	background: url("terrorussia.png"); /* whole background */
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+.field-borders {
+	width: 180px;
+  margin: 0 auto;
+  margin-top: 15px;
+  height: 69%;
+  right: -190px;
+  top: 250px;
+  position: absolute;
+}
+.penance-cont {
+	width: 90px;
+
+	display: inline-block;
+	text-align: center;
+	height: auto;
+	box-sizing: border-box;
+}
+.penance-image {
+	height: 60px;
+	width: 60px;
+	margin: 2px auto;
+	border: 2px solid white;
+	border-radius: 50%;
+	text-align: center;
+}
+.penance-name {
+	font-weight: bold;
+	display: block;
+	width: 100%;
+	color: black;
+	font-size: "16pt";
+	font-family: "Barlow", "Helvetica Neue", sans-serif;
+}
+
+.animated-box {
+  margin-left:50px;
+  height: 80px;
+  font-family: 'Arial';
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  background-color:black;
+}
+
+.animated-box h1 {
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.animated-box p {
+  font-weight: 500;
+}
+
+/* The animation starts here */
+.animated-box {
+  position: relative;
+}
+
+.animated-box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: linear-gradient(120deg, #ff0404, #ffb04d, #7e0e92);
+  background-size: 300% 300%;
+  clip-path: polygon(0% 100%, 8px 100%, 8px 8px, calc(100% - 8px) 8px, calc(100% - 8px) calc(100% - 8px), 8px calc(100% - 8px), 8px 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+.animated-box.in:after {
+  animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
+}
+
+/* motion */
+@keyframes gradient-animation {
+  0% {
+    background-position: 15% 0%;
+  }
+  50% {
+    background-position: 85% 100%;
+  }
+  100% {
+    background-position: 15% 0%;
+  }
+}
+
+@keyframes frame-enter {
+  0% {
+    clip-path: polygon(0% 100%, 8px 100%, 8px 8px, calc(100% - 8px) 8px, calc(100% - 8px) calc(100% - 8px), 8px calc(100% - 8px), 8px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  25% {
+    clip-path: polygon(0% 100%, 8px 100%, 8px 8px, calc(100% - 8px) 8px, calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  50% {
+    clip-path: polygon(0% 100%, 8px 100%, 8px 8px, calc(100% - 8px) 8px, calc(100% - 8px) 8px, calc(100% - 8px) 8px, calc(100% - 8px) 8px, calc(100% - 8px) 8px, 100% 0%, 0% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(0% 100%, 8px 100%, 8px 8px, 8px 8px, 8px 8px, 8px 8px, 8px 8px, 8px 8px, 8px 0%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 8px 100%, 8px 100%, 8px 100%, 8px 100%, 8px 100%, 8px 100%, 8px 100%, 8px 100%, 0% 100%);
+  }
+}
+
+.blinking-text {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
