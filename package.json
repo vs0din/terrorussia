@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/vs0din/dear-santa",
+  "homepage": "https://vs0din.github.io/dear-santa/",
   "dependencies": {
     "html2canvas": "^1.0.0-rc.3",
     "react": "^16.9.0",
